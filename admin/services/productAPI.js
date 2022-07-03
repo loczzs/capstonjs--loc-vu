@@ -1,47 +1,34 @@
-var baseUrl = "https://629757b414e756fe3b2dc8f0.mockapi.io/api/products";
-
-// Hàm call API lấy danh sách sản phẩm
-function apiGetProducts(search) {
+const baseUrl = "https://62a694e897b6156bff7bc30e.mockapi.io/api/Phone";
+function apiGetproduct() {
   return axios({
     url: baseUrl,
     method: "GET",
-    params: {
-      name: search,  // products?name=xiaomi
-    },
   });
 }
-//
-
-// Hàm call API thêm sản phẩm
-function apiAddProduct(product) {
+function apiAddproduct(product) {
   return axios({
     url: baseUrl,
     method: "POST",
     data: product,
   });
 }
-
-// Hàm call API xoá sản phẩm
-function apiDeleteProduct(productId) {
+function apiDelete(productId){
   return axios({
     url: `${baseUrl}/${productId}`,
     method: "DELETE",
+   
   });
 }
-
-// Hàm call API lấy chi tiết sản phẩm
-function apiGetProductDetail(productId) {
+function apiGetdetail(productId){
   return axios({
-    url: `${baseUrl}/${productId}`,
+    url: `${baseUrl}/${productId}`  ,
     method: "GET",
   });
 }
-
-// Hàm call API cập nhật sản phẩm
-function apiUpdateProduct(product) {
+function apiupdateProduct(product){
   return axios({
-    url: `${baseUrl}/${product.id}`,
-    data: product,
+    url: `${baseUrl}/${product.id}`  ,
     method: "PUT",
+    data:product
   });
 }
